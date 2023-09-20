@@ -54,8 +54,9 @@ public class GeradorDeScripts {
                     + "(id serial not null primary key,\n"
                     + "id_cliente  int references cliente(id),\n"
                     + "id_produto int references produto(id),\n"
-                    + "data_compra date,\n"
+                    + "quantidade float,\n"
                     + "valor real ,\n"
+                    + "data_compra date,\n"
                     + "limite_total real);"
             );
         }

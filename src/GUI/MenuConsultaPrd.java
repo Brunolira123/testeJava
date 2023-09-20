@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Bruno
  */
 public class MenuConsultaPrd extends javax.swing.JFrame {
-
+    
     Connection conn = DB.getConnection();
     ProdutoDaoIMP dao = new ProdutoDaoIMP(conn);
     private Produto cliente;
@@ -26,14 +26,14 @@ public class MenuConsultaPrd extends javax.swing.JFrame {
     public MenuConsultaPrd() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
     }
-
+    
     public void findByName(String name) {
-
+        
         DefaultTableModel modelo = (DefaultTableModel) jTProd.getModel();
         modelo.setNumRows(0);
-
+        
         for (Produto p : dao.findByName(txtNome.getText())) {
             modelo.addRow(new Object[]{
                 p.getId(),
@@ -44,7 +44,7 @@ public class MenuConsultaPrd extends javax.swing.JFrame {
     }
     
     public void findAll() {
-
+        
         DefaultTableModel modelo = (DefaultTableModel) jTProd.getModel();
         modelo.setNumRows(0);
         for (Produto p : dao.findAll()) {
@@ -55,14 +55,14 @@ public class MenuConsultaPrd extends javax.swing.JFrame {
             });
         }
     }
-
+    
     public void findById(Integer id) {
-
+        
         DefaultTableModel modelo = (DefaultTableModel) jTProd.getModel();
         modelo.setNumRows(0);
-
+        
         Produto produto = dao.findById(id);
-
+        
         modelo.addRow(new Object[]{
             produto.getId(),
             produto.getDescricao(),
@@ -211,12 +211,12 @@ public class MenuConsultaPrd extends javax.swing.JFrame {
     private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
         if (!txtNome.getText().isEmpty() && txtId.getText().isEmpty()) {
             findByName(txtNome.getText());
-        }
-        if (txtNome.getText().isEmpty() && !txtId.getText().isEmpty()) {
+        } else if (txtNome.getText().isEmpty() && !txtId.getText().isEmpty()) {
             findById(Integer.parseInt(txtId.getText()));
-        }
-        if(txtId.getText().isEmpty() && txtNome.getText().isEmpty()){
+        } else if (txtId.getText().isEmpty() && txtNome.getText().isEmpty()) {
             findAll();
+        } else {
+            findById(Integer.parseInt(txtId.getText()));
         }
         
 

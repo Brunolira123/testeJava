@@ -44,7 +44,7 @@ public class MenuConsulta extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void findAll() {
 
         DefaultTableModel modelo = (DefaultTableModel) jTCliente.getModel();
@@ -74,6 +74,15 @@ public class MenuConsulta extends javax.swing.JFrame {
         });
     }
 
+    public void update(Integer id) {
+
+        DefaultTableModel modelo = (DefaultTableModel) jTCliente.getModel();
+        modelo.setNumRows(0);
+
+        Cliente cliente = dao.findById(id);
+
+   }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,6 +103,7 @@ public class MenuConsulta extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtNome = new javax.swing.JTextPane();
         txtId = new javax.swing.JTextField();
+        btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,6 +169,14 @@ public class MenuConsulta extends javax.swing.JFrame {
         txtNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jScrollPane1.setViewportView(txtNome);
 
+        btnEditar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,6 +189,8 @@ public class MenuConsulta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(btnEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnPesquisa)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,7 +234,8 @@ public class MenuConsulta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -228,10 +249,10 @@ public class MenuConsulta extends javax.swing.JFrame {
         if (txtNome.getText().isEmpty() && !txtId.getText().isEmpty()) {
             findById(Integer.parseInt(txtId.getText()));
         }
-        if(txtId.getText().isEmpty() && txtNome.getText().isEmpty()){
+        if (txtId.getText().isEmpty() && txtNome.getText().isEmpty()) {
             findAll();
         }
-        
+
 
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
@@ -240,6 +261,10 @@ public class MenuConsulta extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +302,7 @@ public class MenuConsulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPesquisa;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/Model/entities/Cliente.java</file>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/GUI/CadastroCliente.java</file>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/GUI/CadastroProduto.java</file>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/Model/dao/impl/ClienteDaoIMP.java</file>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/GUI/MenuConsulta.java</file>
-            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/JavaAdm/src/GUI/TelaInicial.java</file>
+            <file>file:/C:/Git/testeJava/src/dao/impl/ContaDaoIMP.java</file>
+            <file>file:/C:/Git/testeJava/src/db/GeradorDeScripts.java</file>
+            <file>file:/C:/Git/testeJava/src/GUI/MenuConsultaPrd.java</file>
+            <file>file:/C:/Git/testeJava/src/Model/entities/Conta.java</file>
         </group>
     </open-files>
 </project-private>

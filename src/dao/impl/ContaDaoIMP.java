@@ -34,11 +34,6 @@ public class ContaDaoIMP implements ContaDao {
         this.conn = conn;
     }
 
-    LocalDate date = LocalDate.now();
-
-    LocalDate dataa = LocalDate.of(0, Month.MARCH, 0);
-
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     public Conta findById(Integer id) {

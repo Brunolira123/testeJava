@@ -17,14 +17,14 @@ public class Cliente implements Serializable {
 
     private Integer id;
     public String nome= "";
-    public double limite;
+    public Double limite;
     public Integer vencimento;
     public boolean ativo;
 
     public Cliente() {
     }
 
-    public Cliente(String nome, double limite, Integer vencimento, boolean ativo) {
+    public Cliente(String nome, Double limite, Integer vencimento, boolean ativo) {
         this.nome = nome;
         this.limite = limite;
         this.vencimento = vencimento;
@@ -85,14 +85,14 @@ public class Cliente implements Serializable {
     /**
      * @return the limite
      */
-    public double getLimite() {
+    public Double getLimite() {
         return limite;
     }
 
     /**
      * @param limite the limite to set
      */
-    public void setLimite(double limite) {
+    public void setLimite(Double limite) {
         this.limite = limite;
     }
 
